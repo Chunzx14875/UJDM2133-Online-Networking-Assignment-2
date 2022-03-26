@@ -10,9 +10,17 @@ public class Player : Photon.MonoBehaviour
     public Animator anim;
     public GameObject PlayerCamera;
     public SpriteRenderer sr;
-    //public Text PlayerNameText;
+    public Text PlayerNameText;
 
     public bool isGrounded = false;
+    //public Transform playerPos;
+    //public float positionRadius;
+    //public LayerMask ground;
+
+    //private float airTimeCount;
+    //public float airTime;
+    //private bool inAir;
+
     public float MoveSpeed;
     public float JumpForce;
 
@@ -38,14 +46,19 @@ public class Player : Photon.MonoBehaviour
         var move = new Vector3(Input.GetAxisRaw("Horizontal"), 0);
         transform.position += move * MoveSpeed * Time.deltaTime;
 
-        if(Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             sr.flipX = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             sr.flipX = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.velocity = Vector2.up * JumpForce;
         }
     }
 }
