@@ -43,4 +43,13 @@ MonoBehaviour:
   - RequestForPickupItems
   - RequestForPickupTimes
   - TaggedPlayer
+  - FlipFalse
+  - FlipTrue
+  - SendMessage
+  - ChangeDir_Left
+  - DestroyObject
+  - ChangeDir_left
+  - ReduceHealth
+  - Dead
+  - Respawn
   DisableAutoOpenWizard: 1
