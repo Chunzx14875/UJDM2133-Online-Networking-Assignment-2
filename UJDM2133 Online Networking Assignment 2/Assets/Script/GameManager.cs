@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         GameObject obj = Instantiate(PlayerFeed, new Vector2(0, 0), Quaternion.identity);
         obj.transform.SetParent(FeedGrid.transform, false);
         obj.GetComponent<Text>().text = player.name + " joined the game";
-        obj.GetComponent<Text>().color = Color.green;
+        obj.GetComponent<Text>().color = Color.blue;
     }
 
     private void OnPhotonPlayerDisconnected(PhotonPlayer player)
